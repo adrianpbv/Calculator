@@ -9,9 +9,10 @@ class ExpressionEvaluatorTest {
 
     @Test
     fun `Simple expression properly evaluated`() {
-        // 4+5-3*5/3 = 4
+        // -4+5-3*5/3 = -4
         evaluator = ExpressionEvaluator(
             listOf(
+                ExpressionPart.Op(Operation.SUBTRACT),
                 ExpressionPart.Number(4.0),
                 ExpressionPart.Op(Operation.ADD),
                 ExpressionPart.Number(5.0),
@@ -24,7 +25,7 @@ class ExpressionEvaluatorTest {
             )
         )
 
-        assertThat(evaluator.evaluate()).isEqualTo(4)
+        assertThat(evaluator.evaluate()).isEqualTo(-4)
     }
 
     @Test
@@ -67,5 +68,19 @@ class ExpressionEvaluatorTest {
         )
 
         assertThat(evaluator.evaluate()).isEqualTo(6.5)
+    }
+
+    @Test
+    fun  `Calculate percent of a number` () {
+        // 50%75 = 37.5
+        evaluator = ExpressionEvaluator(
+            listOf(
+                ExpressionPart.Number(75.0),
+                ExpressionPart.Op(Operation.PERCENT),
+                ExpressionPart.Number(50.0),
+            )
+        )
+
+        assertThat(evaluator.evaluate()).isEqualTo(37.5)
     }
 }

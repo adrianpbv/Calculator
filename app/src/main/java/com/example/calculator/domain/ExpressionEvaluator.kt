@@ -30,6 +30,11 @@ class ExpressionEvaluator(
                     sum -= term.value
                     remaining = term.remainingExpression
                 }
+                ExpressionPart.Op(Operation.PERCENT) -> {
+                    val term = evalTerm(remaining.drop(1))
+                    sum = term.value / 100
+                    remaining = term.remainingExpression
+                }
                 // this will run until an the expression has been consumed to return an ExpressionResult with the value
                 else -> return ExpressionResult(remaining, sum)
             }
