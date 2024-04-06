@@ -34,4 +34,19 @@ class CalculatorScreenTest {
         // assert result -> check result of operations
         composeRule.onNodeWithText("2.0").assertIsDisplayed()
     }
+
+    @Test
+    fun enterExpression_correctResultDisplayed2() {
+        // When
+        composeRule.onNodeWithText("2").performClick()
+        composeRule.onNodeWithText("÷").performClick()
+        composeRule.onNodeWithText("2").performClick()
+        composeRule.onNodeWithText("x").performClick()
+        composeRule.onNodeWithText("5").performClick()
+        composeRule.onNodeWithText("-").performClick()
+        composeRule.onNodeWithText("6").performClick()
+        composeRule.onNodeWithText("=").performClick()
+        // assert result -> check result of operations
+        composeRule.onNodeWithText("-1.0").assertIsDisplayed()
+    }
 }
