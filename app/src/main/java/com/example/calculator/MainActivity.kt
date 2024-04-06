@@ -9,6 +9,7 @@ import com.example.calculator.ui.theme.CalculatorTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Constants.BASE_URL // variable loaded from the different build variants source folder
         setContent {
             CalculatorTheme {
                 CalculatorScreen()

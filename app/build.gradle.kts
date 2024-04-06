@@ -21,6 +21,11 @@ android {
     }
 
     buildTypes {
+        create("staging") {
+            initWith(getByName("release"))
+            applicationIdSuffix = ".staging"
+        }
+
         release {
             isMinifyEnabled = false
             proguardFiles(
