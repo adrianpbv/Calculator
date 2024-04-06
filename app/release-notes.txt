@@ -1,0 +1,2 @@
+- Test app release notes
+- Launch version 1.0 of the calculator app
