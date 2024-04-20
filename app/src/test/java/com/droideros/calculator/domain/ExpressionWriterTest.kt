@@ -1,4 +1,4 @@
-package com.example.calculator.domain
+package com.droideros.calculator.domain
 
 import com.google.common.truth.Truth.assertThat
 import org.junit.Before
