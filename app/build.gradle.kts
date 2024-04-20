@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.calculator"
+    namespace = "com.droideros.calculator"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.calculator"
+        applicationId = "com.droideros.calculator"
         minSdk = 26
         targetSdk = 34
         versionCode = 1
@@ -27,7 +27,7 @@ android {
         }
 
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
